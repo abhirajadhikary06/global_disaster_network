@@ -1,0 +1,8 @@
+Django
+requests
+nltk
+google-generativeai
+python-dotenv
+pillow
+geopy
+daphne
