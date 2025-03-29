@@ -30,9 +30,9 @@ def predict_disaster(request):
     disaster_types = ['Earthquake', 'Drought', 'Volcanic activity', 'Flood', 'Storm', 'Wildfire']
 
     # Get filter values from the request
-    selected_year = request.GET.get('year', 'all')
-    selected_country = request.GET.get('country', 'all')
-    selected_disaster_type = request.GET.get('disaster_type', 'all')
+    selected_year = request.GET.get('year', '2026')
+    selected_country = request.GET.get('country', 'India')
+    selected_disaster_type = request.GET.get('disaster_type', 'Storm')
 
     # Create a cache key based on the filters
     cache_key = f"predictions_{selected_year}_{selected_country}_{selected_disaster_type}"
