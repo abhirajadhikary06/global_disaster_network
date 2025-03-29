@@ -159,7 +159,7 @@
             gap: 25px;
         }
         .video-card {
-            background-color: var(--dark-lighter);
+            background-color: var(--lime);
             padding: 15px;
             border-radius: 8px;
             text-align: center;
@@ -184,7 +184,7 @@
         .video-card h3 {
             font-size: 1.1rem;
             margin: 15px 0;
-            color: var(--white);
+            color: var(--dark);
             line-height: 1.4;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -193,6 +193,10 @@
             
             -webkit-box-orient: vertical;
             max-height: calc(1.4 * 2 * 1.1rem);
+            transition: color 0.3s ease;
+        }
+        .video-card:hover h3 {
+            color: var(--white);
         }
         .video-card a {
             color: var(--lime);
@@ -202,6 +206,7 @@
         .video-card a:hover {
             color: var(--lime-dark);
             text-decoration: none;
+        
         }
         /* No videos message */
         .no-videos {
@@ -220,17 +225,25 @@
     <!-- Navbar -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <span class="icon mr-2" style="color: var(--blue);">
-                        <i class="fas fa-satellite-dish"></i>
-                    </span>
-                    Global Disaster Network
-                    <span class="alert-badge">LIVE</span>
-                </a>
-            </div>
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+              <span class="icon mr-2" style="color: var(--blue);">
+                <i class="fas fa-satellite-dish"></i>
+              </span>
+              Global Disaster Network
+              <span class="alert-badge">LIVE</span>
+            </a>
+          </div>
+          <div class="navbar-end"></div>
+            <a class="navbar-item" href="/home" style="text-decoration: var(--dark);">
+              <span class="icon" style="color: var(--lime);">
+            <i class="fas fa-home"></i>
+              </span>
+            </a>
+          </div>
         </div>
-    </nav>
+      </nav></a>
+      
     <!-- Header Section -->
     <section class="dashboard-header">
         <div class="container">
