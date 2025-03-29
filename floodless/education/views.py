@@ -6,7 +6,7 @@ from django.conf import settings
 YOUTUBE_API_KEY = settings.YOUTUBE_API_KEY
 
 def education_view(request):
-    disaster_type = request.GET.get('disaster_type', '')
+    disaster_type = request.GET.get('disaster_type', 'Earthquake')  # Default to 'Earthquake'
     videos = []
 
     if disaster_type:

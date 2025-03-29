@@ -78,6 +78,14 @@ GAN provides a public API for developers to access previous disaster data, enabl
 - **Authentication**: Requires an API key, which can be obtained by registering on the GAN developer portal.
 - **Rate Limit**: 1000 requests per hour per API key.
 
+### 8. Disaster Management Educational Videos
+This feature provides users with access to curated educational videos on disaster management, helping them prepare for various types of natural disasters.
+
+- **Disaster Type Selection**: Users can select a specific disaster type (e.g., earthquake, flood, wildfire) to view relevant educational content.
+- **YouTube Integration**: The platform integrates with YouTube to display disaster management videos from trusted sources.
+- **Interactive Learning**: Videos include actionable tips, safety measures, and preparation guidelines to help users effectively respond to disasters.
+- **Localized Content**: Where available, videos tailored to specific regions or languages are prioritized to ensure relevance and accessibility.
+- **Continuous Updates**: The video library is regularly updated to include the latest and most accurate information on disaster management.
 ---
 
 ## Installation
