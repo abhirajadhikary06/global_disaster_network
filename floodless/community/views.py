@@ -93,14 +93,6 @@ def user_logout(request):
     messages.success(request, "You have been logged out.")
     return redirect('login')
 
-# community/views.py
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.utils import timezone
-from .models import EmergencyReport
-from geopy.geocoders import Nominatim
-
 @login_required
 def emergency_report(request):
     if request.user.profile.role != 'citizen':
@@ -162,11 +154,6 @@ def authority_dashboard(request):
     # Redirect to report_list since authorities should only access that page
     return redirect('report_list')
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, render
-from django.http import JsonResponse
-from .models import EmergencyReport
-
 @login_required
 def disaster_chat(request, report_id):
     report = get_object_or_404(EmergencyReport, id=report_id, is_active=True)
@@ -181,7 +168,8 @@ def disaster_chat(request, report_id):
                 'user': message.user.username,
                 'message': message.message,
                 'timestamp': message.timestamp.strftime('%Y-%m-%d %H:%M:%S'),
-                'is_authority': message.user.profile.role == 'authority'
+                'is_authority': message.user.profile.role == 'authority',
+                'report_location': report.location if report.location else "Location not provided"
             }
             for message in messages
         ]
