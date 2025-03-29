@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education | Global Disaster Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Custom Color Palette */
+            --blue: #0077C6;         /* Primary blue */
+            --blue-dark: #005d9c;    /* Darker shade of blue */
+            --blue-light: #3a99de;   /* Lighter shade of blue */
+            --dark: #333333;         /* Dark gray/black */
+            --dark-light: #4a4a4a;   /* Lighter version of dark */
+            --dark-lighter: #666666; /* Even lighter version of dark */
+            --lime: #C6FF00;         /* Accent lime green */
+            --lime-dark: #a2cc00;    /* Darker shade of lime */
+            --white: #ffffff;        /* White for contrast */
+            --gray-light: #e0e0e0;   /* Light gray */
+        }
+    
+        body {
+            background-color: var(--dark);
+            color: var(--white);
+            min-height: 100vh;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        .navbar {
+            background-color: var(--dark);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        .navbar-brand .navbar-item {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+    
+        .alert-badge {
+            background-color: var(--lime);
+            color: var(--dark);
+            border-radius: 12px;
+            padding: 2px 12px;
+            font-size: 0.8rem;
+            margin-left: 8px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+    
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+    
+        .dashboard-header {
+            background: var(--blue);
+            padding: 4rem 1.5rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        .dashboard-title {
+            color: white;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+    
+        .dashboard-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            max-width: 800px;
+        }
+
+        .footer {
+            background-color: var(--dark-light);
+            color: var(--gray-light);
+            padding: 3rem 1.5rem;
+            margin-top: 3rem;
+        }
+    
+        .footer a {
+            color: var(--gray-light);
+            transition: color 0.2s ease;
+        }
+    
+        .footer a:hover {
+            color: var(--lime);
+        }
+    
+        .footer h4 {
+            color: var(--white) !important;
+        }
+    
+        /* Custom lime button */
+        .button.is-lime {
+            background-color: var(--lime);
+            color: var(--dark);
+            font-weight: bold;
+        }
+    
+        .button.is-lime:hover {
+            background-color: var(--lime-dark);
+        }
+    
+        /* Tags */
+        .tags .tag.is-info {
+            background-color: var(--blue);
+            color: white;
+        }
+    
+        .tags .tag.is-danger {
+            background-color: var(--lime);
+            color: var(--dark);
+        }
+
+        .filter-form {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .filter-form label {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-right: 15px;
+        }
+
+        .filter-form select {
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 2px solid var(--blue);
+            border-radius: 5px;
+            background-color: var(--dark-lighter);
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .filter-form select:focus {
+            border-color: var(--lime);
+            background-color: var(--dark-light);
+        }
+
+        .filter-form select option {
+            background-color: var(--dark);
+            color: var(--white);
+        }
+
+        .filter-form button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: var(--blue);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        .filter-form button:hover {
+            background-color: var(--blue-dark);
+            transform: scale(1.05);
+        }
+
+        .filter-form button:active {
+            background-color: var(--blue-light);
+            transform: scale(0.98);
+        }
+
+        /* Video grid styles */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .video-card {
+            background-color: var(--dark-lighter);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 2px solid var(--gray-light);
+            transition: border-color 0.3s ease;
+        }
+
+        .video-card img:hover {
+            border-color: var(--lime);
+        }
+
+        .video-card h3 {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            color: var(--white);
+            line-height: 1.4;
+        }
+
+        .video-card a {
+            color: var(--lime);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .video-card a:hover {
+            color: var(--lime-dark);
+            text-decoration: underline;
+        }
+
+        /* No videos message */
+        .no-videos {
+            text-align: center;
+            color: var(--dark-lighter);
+            font-size: 1.2rem;
+            padding: 20px;
+            background-color: var(--dark-light);
+            border-radius: 5px;
+            border: 1px solid var(--gray-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="icon mr-2" style="color: var(--blue);">
+                        <i class="fas fa-satellite-dish"></i>
+                    </span>
+                    Global Disaster Network
+                    <span class="alert-badge">LIVE</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="dashboard-header">
+        <div class="container">
+            <h1 class="dashboard-title">
+                <span class="icon mr-2" style="color: var(--lime);">
+                    <i class="fas fa-lightbulb"></i>
+                </span>
+                Disaster Awarness
+            </h1>
+            <p class="dashboard-subtitle">Get awarness related contents on your selected Disaster</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="filter-form">
+            <form method="GET" action="{% url 'education_view' %}">
+                <label for="disaster_type">Select Disaster Type:</label>
+                <select name="disaster_type" id="disaster_type">
+                    <option value="">-- Select a Disaster --</option>
+                    <option value="Earthquake" {% if disaster_type == "Earthquake" %}selected{% endif %}>Earthquake</option>
+                    <option value="Flood" {% if disaster_type == "Flood" %}selected{% endif %}>Flood</option>
+                    <option value="Storm" {% if disaster_type == "Storm" %}selected{% endif %}>Storm</option>
+                    <option value="Drought" {% if disaster_type == "Drought" %}selected{% endif %}>Drought</option>
+                    <option value="Wildfire" {% if disaster_type == "Wildfire" %}selected{% endif %}>Wildfire</option>
+                    <option value "Volcanic Activity" {% if disaster_type == "Volcanic Activity" %}selected{% endif %}>Volcanic Activity</option>
+                </select>
+                <button type="submit">Search Videos</button>
+            </form>
+        </div>
+
+        {% if videos %}
+            <div class="video-grid">
+                {% for video in videos %}
+                    <div class="video-card">
+                        <a href="{{ video.link }}" target="_blank">
+                            <img src="{{ video.thumbnail }}" alt="{{ video.title }}">
+                            <h3>{{ video.title }}</h3>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p style="text-align: center; color: #666;">No videos found. Please select a disaster type to search.</p>
+        {% endif %}
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <h3 class="title is-4 has-text-weight-bold mb-4" style="color: var(--white);">
+                        <span class="icon mr-2" style="color: var(--blue);">
+                            <i class="fas fa-satellite-dish"></i>
+                        </span>
+                        Global Disaster Network
+                    </h3>
+                    <p class="mb-3">Providing critical information during times of crisis. Our mission is to keep people informed with accurate and timely updates.</p>
+                    <button class="button is-lime mt-3">
+                        <span class="icon"><i class="fas fa-bell"></i></span>
+                        <span>Subscribe to Alerts</span>
+                    </button>
+                </div>
+                <div class="column is-2 is-offset-1">
+                    <h4 class="title is-6 has-text-weight-bold mb-3">Resources</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#">Emergency Contacts</a></li>
+                        <li class="mb-2"><a href="#">Relief Organizations</a></li>
+                        <li class="mb-2"><a href="#">Safety Guides</a></li>
+                    </ul>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-6 has-text-weight-bold mb-3">About</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#">Our Mission</a></li>
+                        <li class="mb-2"><a href="#">Sources</a></li>
+                        <li class="mb-2"><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="column is-2">
+                    <h4 class="title is-6 has-text-weight-bold mb-3">Legal</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#">Terms of Service</a></li>
+                        <li class="mb-2"><a href="#">Data Sources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

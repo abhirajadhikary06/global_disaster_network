@@ -1,8 +1,8 @@
-# Global Alert Network
+# Global Disaster Network
 
 ## Overview
 
-The **Global Alert Network (GAN)** is a comprehensive disaster management platform designed to empower communities, authorities, and individuals by providing real-time tools and resources to predict, monitor, and respond to natural disasters and calamities. Built with a focus on connectivity, accessibility, and transparency, GAN aims to reduce the impact of disasters through proactive measures, community engagement, and advanced technology.
+The **Global Disaster Network (GAN)** is a comprehensive disaster management platform designed to empower communities, authorities, and individuals by providing real-time tools and resources to predict, monitor, and respond to natural disasters and calamities. Built with a focus on connectivity, accessibility, and transparency, GAN aims to reduce the impact of disasters through proactive measures, community engagement, and advanced technology.
 
 This project leverages modern web technologies, AI-driven predictions, and real-time data to create a robust system for disaster preparedness and response. Below is a detailed breakdown of the features, setup instructions, and API documentation for developers.
 
@@ -151,7 +151,7 @@ GAN provides a public API for developers to access previous disaster data, enabl
 
 ## Contributing
 
-We welcome contributions to the Global Alert Network! To contribute:
+We welcome contributions to the Global Disaster Network! To contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature`).
@@ -177,4 +177,4 @@ This project is licensed under the MIT License.
 
 ---
 
-The Global Alert Network is committed to making the world a safer place by empowering communities with the tools they need to face natural disasters. Join us in building a more resilient future! 🌍
+The Global Disaster Network is committed to making the world a safer place by empowering communities with the tools they need to face natural disasters. Join us in building a more resilient future! 🌍

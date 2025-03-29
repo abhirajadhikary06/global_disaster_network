@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'community',
     'channels',  # Add the Channels app
     'home',
+    'education',
 ]
 
 
@@ -135,4 +136,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GEMINI_API_KEY = 'AIzaSyBi3IV-S4N61E0kc6E5nEuuZa5nJqwjFB0'
+YOUTUBE_API_KEY = 'AIzaSyBx6Ua5dB2O1B6a3LOqPIRDCuYWfF-eBiQ'
 
