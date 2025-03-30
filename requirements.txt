@@ -8,3 +8,5 @@ geopy
 daphne
 gunicorn
 channels
+channels-redis
+uvicorn
