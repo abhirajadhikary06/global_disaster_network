@@ -4,8 +4,8 @@ from django.core.cache import cache
 from .models import Calamity
 
 def dashboard(request):
-    calamity_type_filter = request.GET.get('calamity_type', 'all')
-    year_filter = request.GET.get('year', 'all')
+    calamity_type_filter = request.GET.get('calamity_type', 'storm')
+    year_filter = request.GET.get('year', '2020')
     cache_key = f"calamities_{calamity_type_filter}_{year_filter}"
 
     cached_calamities = cache.get(cache_key)
